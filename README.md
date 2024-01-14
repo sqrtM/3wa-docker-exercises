@@ -6,7 +6,7 @@
 
 #### Objectif
 
-À la fin de cette journée, vous devriez être en piloter vos développements par les tests unitaires.
+À la fin de cette journée, vous devriez être en mesure de piloter vos développements par les tests unitaires.
 
 #### Contenu
 
