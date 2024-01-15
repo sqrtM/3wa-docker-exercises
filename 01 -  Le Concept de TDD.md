@@ -339,9 +339,9 @@ public function setUp(): void
 
 ```php
 $users = [
-    ['username' => 'Alan'],
-    ['username' => 'Sophie'],
-    ['username' => 'Bernard'],
+    ['username' => 'Alan', 'createdAt' => date("Y-m-d H:i:s", strtotime('2024-01-15 00:00:00'))],
+    ['username' => 'Sophie', 'createdAt' => date("Y-m-d H:i:s", strtotime('2024-01-15 00:00:00'))],
+    ['username' => 'Bernard', 'createdAt' => date("Y-m-d H:i:s", strtotime('2024-01-15 00:00:00'))],
 ];
 ```
 
