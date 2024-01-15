@@ -2,7 +2,7 @@ let dotenv = require('dotenv');
 
 dotenv.config();
 
-module.exports = class Message {
+export default class Message {
     constructor() {
         this._lang = process.env.LANGUAGE;
         this._translates = {

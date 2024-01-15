@@ -266,17 +266,19 @@ _Attention, `assertEquals` et `assertSame` sont différents. La deuxième métho
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="tests/autoload.php"
-         colors="true">
-    <testsuites>
-        <testsuite name="Calculator">
-            <file>./tests/CalculatorTest.php</file>
-        </testsuite>
-         <testsuite name="Model">
-           <directory>./tests/Model/ModelTest.php</directory>
-        </testsuite>
-    </testsuites>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" bootstrap="tests/bootstrap.php" cacheDirectory=".phpunit.cache" executionOrder="depends,defects" requireCoverageMetadata="true" beStrictAboutCoverageMetadata="true" beStrictAboutOutputDuringTests="true" failOnRisky="true" failOnWarning="true">
+  <testsuites>
+    <testsuite name="Message">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <source>
+    <include>
+      <directory>src</directory>
+    </include>
+  </source>
 </phpunit>
+
 ```
 
 Faites les trois tests suivants :
