@@ -38,13 +38,3 @@ Pour changer le délimiteur, le début de l'entrée contiendra une ligne sépar�
 7. L'appel à `add` avec plusieurs erreurs renverra tous les messages d'erreur séparés par des nouvelles lignes.
    - `"//|\n1|2,-3"` n'est pas valide et renvoie le message `"Negative number(s) not allowed : -3\n'|' attendu mais ',' trouvé en position 3"`.
 8. Les nombres supérieurs à 1000 doivent être ignorés, donc l'addition de 2 + 1001 = 2
-
-"1,3,5" => 8
-
-"1,3,5\n4,6" => 18
-
-"//<delimeter>\n1<delimeter>2<delimiter>3" => 5
-
-"//p\n1p2p3" => 5
-"//;\n1;2;500;" => 503
-"//hello\n1hello2hello3hello4" => 9
