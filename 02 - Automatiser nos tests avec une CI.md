@@ -39,16 +39,18 @@ Les workflows GHA vous permettent d'automatiser des tâches telles que les tests
    ```yaml
    name: Mon Workflow de Tests
    ```
+   
 2. **Événements déclencheurs**: Les événements qui déclenchent l'exécution du workflow. Cela peut être un `push` vers une branche, la création d'une Pull Request, un horaire programmé, etc.
-   ```yaml
+  ```yaml
    on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - feat/*
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - feat/*
    ```
+
 3. **Jobs**: Les tâches spécifiques à effectuer, organisées en jobs. Chaque job est exécuté sur une machine virtuelle distincte (pallalèlement ou non).
    ```yaml
    jobs:
