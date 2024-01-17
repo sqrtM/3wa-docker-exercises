@@ -2,7 +2,7 @@
 
 Dans cette partie, nous allons utiliser Docker Compose afin de déployer le moteur wordpress et la database mysql que celui-ci utilise. 
 
-## Le fichier docker-compose.yml
+## Le fichier compose.yaml
 
 Créez un répertoire wp et à l'intérieur de celui-ci créez le fichier `compose.yaml`:
 
