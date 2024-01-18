@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx_container
+    image: nginx
+    ports:
+      - 8080:80
+  database:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5431:5432
