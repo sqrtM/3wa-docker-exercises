@@ -1,0 +1,16 @@
+version: '3'
+services:
+  wordpress:
+    image: wordpress:php8.1
+    ports:
+      - 8080:80
+    volumes:
+      - .docker/wordpress:/var/www/html
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - .docker/db_data:/var/lib/mysql
+
