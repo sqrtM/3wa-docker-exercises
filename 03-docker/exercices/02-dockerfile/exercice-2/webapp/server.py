@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Setup the connection to the database
 db = SQLAlchemy()
-db_uri = 'mysql://root:movie123@database:3306/movies'
+db_uri = 'mysql://root:movie123@database:3307/movies'
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
