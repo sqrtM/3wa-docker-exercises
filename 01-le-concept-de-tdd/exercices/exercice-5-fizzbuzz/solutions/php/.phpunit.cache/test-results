@@ -1,1 +1,0 @@
-{"version":1,"defects":{"App\\Tests\\FizzBuzzTest::testIfMultipleOfThreeAndFive":5},"times":{"App\\Tests\\FizzBuzzTest::testIfMultipleOfThreeAndFive":0.001,"App\\Tests\\FizzBuzzTest::testIfMultipleOfThree":0,"App\\Tests\\FizzBuzzTest::testIfMultipleOfFive":0,"App\\Tests\\FizzBuzzTest::testWhenNoMultiple":0}}
