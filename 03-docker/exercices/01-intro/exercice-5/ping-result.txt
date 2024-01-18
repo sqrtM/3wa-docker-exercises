@@ -1,0 +1,12 @@
+# ping database
+PING database (192.168.128.2) 56(84) bytes of data.
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=1 ttl=64 time=0.089 ms
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=2 ttl=64 time=0.062 ms
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=3 ttl=64 time=0.060 ms
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=4 ttl=64 time=0.068 ms
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=5 ttl=64 time=0.060 ms
+64 bytes from postgres_container.example_network (192.168.128.2): icmp_seq=6 ttl=64 time=0.070 ms
+^C
+--- database ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5187ms
+rtt min/avg/max/mdev = 0.060/0.068/0.089/0.010 ms
