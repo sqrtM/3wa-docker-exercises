@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get -yqq update
-RUN apt-get -yqq install python3-pip python3-dev curl gnupg libmysqlclient-dev
+RUN apt-get -yqq install python3-pip python3-dev curl gnupg libmysqlclient-dev pkg-config
 
 COPY . /opt/flask-app
 WORKDIR /opt/flask-app

@@ -1,11 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
 
 app = Flask(__name__)
 
 # Setup the connection to the database
 db = SQLAlchemy()
-db_uri = 'mysql://root:movie123@database:3307/movies'
+db_uri = 'mysql://root:movie123@database:3306/movies'
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
@@ -16,11 +17,12 @@ def get_movies():
     Retrieves all movies from the database.
     """
     movies = []
+    with db.engine.connect() as conn:
+        for row in conn.execute(text("SELECT * FROM movies")):
+            
+            movies.append({"name": row[0], "rating": row[1]})
 
-    for row in db.engine.execute("SELECT * FROM movies"):
-        movies.append({"name": row[0], "rating": row[1]})
-
-    return movies
+        return movies
 
 
 def render_movie_li(movies):
