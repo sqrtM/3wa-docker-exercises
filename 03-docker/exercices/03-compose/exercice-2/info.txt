@@ -1,0 +1,37 @@
+-- reverse proxy correctly redirects:
+exercice-2-reverse-proxy-1  | 192.168.192.1 - - [18/Jan/2024:12:46:15 +0000] "GET /wp/wp-admin/about.php HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "-"
+exercice-2-wordpress-1      | 192.168.192.1 - - [18/Jan/2024:12:46:15 +0000] "GET /wp-login.php?redirect_to=http%3A%2F%2Fwordpress%2Fwp-admin%2Fabout.php&reauth=1 HTTP/1.1" 200 4284 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+----------------------------------------
+additional conf for reverse-proxy:
+server {
+    listen 8081;
+    server_name wordpress;
+
+    location /wp {
+        rewrite ^/wp(.*)$ $1 break;
+        proxy_pass http://wordpress:80;
+        proxy_redirect / /wp;
+        sub_filter 'href="/' 'href="/wp';
+    }
+}
+
+server {
+    listen 443;
+    server_name wordpress;
+
+    location / {
+        proxy_pass http://wordpress:80;
+    }
+}
+----------------------------------------
+
+additional conf for wordpress server:
+server {
+    listen 443 ssl;
+    server_name wordpress;
+    location / {
+        proxy_pass http://wordpress:80;
+  }
+}
+-------------------------------------------
